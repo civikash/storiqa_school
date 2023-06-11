@@ -1,0 +1,28 @@
+{% extends 'app.html' %}
+{% load static %}
+{% block game %}
+<div class="game__container">
+    <div class="container">
+        <h1>Игра Алфавит</h1>
+        <div class="game__body">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="game__body-form">
+            <span>Выбери букву {{ correct_letter }} </span>
+            <div class="game__body-selected">
+            {% for letter in letters %}
+            <div class="letter__object">
+                <input class="letter__select"type="radio" name="letter" value="{{ letter }}" required>
+    
+            <div class="selected__radio">
+                <label for="{{ letter.id }}">{{ letter }}</label>
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+        </div>
+        </form>
+    </div>
+    </div>
+</div>
+{% endblock game %}

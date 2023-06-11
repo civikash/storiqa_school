@@ -1,0 +1,141 @@
+nav {
+    margin-top: 25px;
+    text-decoration: none;
+    gap: 75px;
+    width: 100%;
+    text-transform: uppercase;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .nav__header {
+        display: flex;
+        gap: 15px;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .profile__circle {
+        order: 3;
+        background-color: $blue;
+        width: 55px;
+        height: 55px;
+        border-radius: 90%;
+    }
+
+    a {
+        img {
+            width: 250px;
+        }
+    }
+
+    ul {
+        display: flex;
+        width: 100%;
+        gap: 55px;
+        align-items: center;
+    }
+
+    .burger-menu-button {
+        background: none;
+        border: none;
+        display: none;
+        cursor: pointer;
+    }
+
+    .burger-menu-icon {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: $dark;
+        position: relative;
+    
+        &::before,
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: $dark;
+          position: absolute;
+          transition: transform 0.3s ease-in-out;
+        }
+    
+        &::before {
+          top: -8px;
+        }
+    
+        &::after {
+          top: 8px;
+        }
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        order: 3;
+        
+        input {
+            display: none;
+        }
+      
+        .navbar-toggle-icon {
+          display: none;
+          order: 2;
+          width: 30px;
+          height: 30px;
+          position: relative;
+          cursor: pointer;
+          z-index: 1;
+      
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background-color: $dark;
+            transition: transform 0.3s ease;
+          }
+      
+          &::before {
+            top: 0;
+          }
+      
+          &::after {
+            bottom: 0;
+          }
+        }
+      
+        .navbar-menu {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      
+          li {
+            margin-bottom: 10px;
+      
+            a {
+              color: #333;
+              text-decoration: none;
+      
+            }
+          }
+        }
+      
+        input[type="checkbox"]:checked ~ .navbar-menu {
+          display: block;
+        }
+      
+        input[type="checkbox"]:checked ~ .navbar-toggle-icon::before {
+          transform: rotate(45deg);
+          top: 50%;
+        }
+      
+        input[type="checkbox"]:checked ~ .navbar-toggle-icon::after {
+          transform: rotate(-45deg);
+          bottom: 50%;
+        }
+      }
+}

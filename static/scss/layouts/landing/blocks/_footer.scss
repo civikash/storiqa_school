@@ -1,0 +1,45 @@
+footer {
+    margin-top: auto;
+}
+
+.footer__landing {
+    margin-top: 55px;
+    width: 100%;
+    padding: 15px;
+    height: 350px;
+    background-color: $blue;
+    background-image: url('../img/footer_bg.svg');
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-position: top; 
+}
+
+.footer__map-row {
+    margin-top: 35px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    img {
+        width: 150px;
+    }
+
+    img:last-child {
+        width: 100px;
+    }
+
+    .map__element {
+        display: flex;
+        gap: 25px;
+        flex-direction: column;
+
+        h1 {
+            color: $white;
+        }
+
+        a {
+            color: $blue-2;
+            cursor: pointer;
+        }
+    }
+}
